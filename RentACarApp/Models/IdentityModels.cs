@@ -99,6 +99,8 @@ namespace RentACarApp.Models
         {
            
             Configuration.LazyLoadingEnabled = false;
+
+            
             
         }
 
