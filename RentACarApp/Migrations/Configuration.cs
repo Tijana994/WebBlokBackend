@@ -62,7 +62,7 @@ namespace RentACarApp.Migrations
 
             context.AppUsers.AddOrUpdate(
                         p => p.Id,
-                             new AppUser { Approved = false, BirthDate = new DateTime(1994, 8, 30), CreateService = true, Surname = "Adminko", LoggedIn = false, Name = "Admin" }
+                             new AppUser { Approved = false, BirthDate = new DateTime(1994, 8, 30), CreateService = true, Surname = "Adminko", LoggedIn = false, Name = "Admin" , Username = "admin"}
         
                              
                       );
@@ -71,7 +71,7 @@ namespace RentACarApp.Migrations
             {
                 var appUser = context.AppUsers.FirstOrDefault(p => p.Name == "Admin");
 
-                var user = new ApplicationUser() { Id = "admin", UserName = "admin", Email = "admin@yahoo.com", PasswordHash =ApplicationUser.HashPassword("admin") };
+                var user = new ApplicationUser() { Id = "admin", UserName = "admin", Email = "admin@yahoo.com", PasswordHash =ApplicationUser.HashPassword("admin"), AppUser = appUser};
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "Admin");
             }

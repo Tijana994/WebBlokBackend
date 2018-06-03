@@ -234,9 +234,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806021243212_First Migration.cs" />
-    <Compile Include="Migrations\201806021243212_First Migration.Designer.cs">
-      <DependentUpon>201806021243212_First Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201806031224244_First Migration.cs" />
+    <Compile Include="Migrations\201806031224244_First Migration.Designer.cs">
+      <DependentUpon>201806031224244_First Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -249,17 +249,33 @@
     <Compile Include="Models\PriceList.cs" />
     <Compile Include="Models\Rate.cs" />
     <Compile Include="Models\Reservation.cs" />
-    <Compile Include="Models\Servis.cs" />
+    <Compile Include="Models\Service.cs" />
     <Compile Include="Models\TypeOfVehicle.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Repo\AppUserRepository.cs" />
+    <Compile Include="Repo\BranchRepository.cs" />
     <Compile Include="Repo\IAppUserRepository.cs" />
+    <Compile Include="Repo\IBranchRepository.cs" />
+    <Compile Include="Repo\IPicRepository.cs" />
+    <Compile Include="Repo\IPriceListRepository.cs" />
+    <Compile Include="Repo\IRateRepository.cs" />
     <Compile Include="Repo\IRepository.cs" />
+    <Compile Include="Repo\IReservationRepository.cs" />
+    <Compile Include="Repo\IServiceRepository.cs" />
+    <Compile Include="Repo\ITypeOfVehicleRepository.cs" />
     <Compile Include="Repo\IUnitOfWork.cs" />
+    <Compile Include="Repo\IVehicleRepository.cs" />
+    <Compile Include="Repo\PicRepository.cs" />
+    <Compile Include="Repo\PriceListRepository.cs" />
+    <Compile Include="Repo\RateRepository.cs" />
     <Compile Include="Repo\Repository.cs" />
+    <Compile Include="Repo\ReservationRepository.cs" />
+    <Compile Include="Repo\ServiceRepository.cs" />
+    <Compile Include="Repo\TypeOfVehicleRepository.cs" />
     <Compile Include="Repo\UnitOfWork.cs" />
+    <Compile Include="Repo\VehicleRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -297,6 +313,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Migrations\201806031224244_First Migration.resx">
+      <DependentUpon>201806031224244_First Migration.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -340,11 +359,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806021243212_First Migration.resx">
-      <DependentUpon>201806021243212_First Migration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

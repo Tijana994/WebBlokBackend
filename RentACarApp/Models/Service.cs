@@ -7,7 +7,7 @@ using System.Web;
 
 namespace RentACarApp.Models
 {
-    public class Servis
+    public class Service
     {
         [Key]
         public int Id { get; set; }
@@ -23,15 +23,20 @@ namespace RentACarApp.Models
         [Required]
         [MaxLength(40)]
         public string Contact { get; set; }
-       
-       [Required]
+
+        [Required]
+        [ForeignKey("AppUser")]
+        public int AppUserId { get; set; }
+        public AppUser AppUser { get; set; }
+
+        [Required]
         [MaxLength(200)]
         public string Path { get; set; } //format : idServisa_Logo
         [Required]
         public bool Approved { get; set; }
         public double AverageMark { get; set; }
-        public virtual ICollection<Branch> Branches { get; set; }    //FK-s
-        public List<Vehicle> Vehicles { get; set; }    //FK-s
+        public List<Branch> Branches { get; set; }    //FK-s
+        public List<Vehicle> Vehicles { get; set; }
         public List<Rate> Rates { get; set; }  //FK-s
     }
 }

@@ -28,7 +28,7 @@ namespace RentACarApp.Models
         public int VehicleId { get; set; } //FK
         public Vehicle Vehicle { get; set; }
 
-        [Required]
-        public List<Branch> Branches { get; set; }
+        public List<BranchReservation> BranchReservations { get; set; }
+
     }
 }

@@ -23,8 +23,8 @@ namespace RentACarApp.Models
         public AppUser AppUser { get; set; }
 
         [Required]
-        [ForeignKey("Servis")]
-        public int ServisId { get; set; }
-        public Servis Servis { get; set; }
+        [ForeignKey("Service")]
+        public int ServiceId { get; set; }
+        public Service Service { get; set; }
     }
 }

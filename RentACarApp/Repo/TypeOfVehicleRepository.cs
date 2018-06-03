@@ -1,14 +1,15 @@
 ﻿using RentACarApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
 namespace RentACarApp.Repo
 {
-    public class AppUserRepository : Repository<AppUser>,IAppUserRepository
+    public class TypeOfVehicleRepository: Repository<TypeOfVehicle>, ITypeOfVehicleRepository
     {
-        public AppUserRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
+        public TypeOfVehicleRepository(DbContext applicationDbContext) : base(applicationDbContext)
         {
         }
 
@@ -16,6 +17,5 @@ namespace RentACarApp.Repo
         {
             get { return Context as ApplicationDbContext; }
         }
-
     }
 }

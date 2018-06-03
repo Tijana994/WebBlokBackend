@@ -20,10 +20,11 @@ namespace RentACarApp.Models
         [MaxLength(60)]
         public string Address { get; set; }
         [Required]
-        [ForeignKey("Servis")]
-        public int ServisId { get; set; }
-        public Servis Servis { get; set; }
-        public List<Reservation> ReceptionReservations { get; set; }
-        public List<Reservation> ReturnReservations { get; set; }
+        [ForeignKey("Service")]
+        public int ServiceId { get; set; }
+        public Service Service { get; set; }
+
+        public List<BranchReservation> BranchReservations { get; set; }
+
     }
 }

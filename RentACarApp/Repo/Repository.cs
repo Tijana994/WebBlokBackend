@@ -13,7 +13,7 @@ namespace RentACarApp.Repo
     {
         protected readonly DbContext Context;
 
-
+       
         public Repository(DbContext applicationDbContext)
         {
             Context = applicationDbContext;

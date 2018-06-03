@@ -6,9 +6,9 @@ using System.Web;
 
 namespace RentACarApp.Repo
 {
-    public class AppUserRepository : Repository<AppUser>,IAppUserRepository
+    public class PicRepository : Repository<Pic>, IPicRepository
     {
-        public AppUserRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
+        public PicRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
         {
         }
 
@@ -17,5 +17,6 @@ namespace RentACarApp.Repo
             get { return Context as ApplicationDbContext; }
         }
 
+        
     }
 }

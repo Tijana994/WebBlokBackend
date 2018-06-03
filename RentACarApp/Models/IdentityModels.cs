@@ -86,7 +86,7 @@ namespace RentACarApp.Models
 
         public virtual DbSet<Reservation> Reservations { get; set; }
 
-        public virtual DbSet<Servis> Servisi { get; set; }
+        public virtual DbSet<Service> Services { get; set; }
 
         public virtual DbSet<Pic> Pics { get; set; }
 
@@ -94,20 +94,42 @@ namespace RentACarApp.Models
 
         public virtual DbSet<Vehicle> Vehicles { get; set; }
 
+        public virtual DbSet<BranchReservation> BranchReservations { get; set; }
+
         public ApplicationDbContext()
             : base("name=Cars")
         {
-           
+
             Configuration.LazyLoadingEnabled = false;
 
-            
-            
+
+
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<BranchReservation>()
+            .HasRequired(c => c.Branch)
+            .WithMany()
+            .WillCascadeOnDelete(false);
+
+            builder.Entity<BranchReservation>()
+            .HasRequired(c => c.Reservation)
+            .WithMany()
+            .WillCascadeOnDelete(false);
+
+            builder.Entity<Service>()
+            .HasRequired(c => c.AppUser)
+            .WithMany()
+            .WillCascadeOnDelete(false);
+        }
+
 
     }
 }

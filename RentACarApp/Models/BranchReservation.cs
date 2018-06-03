@@ -9,18 +9,17 @@ namespace RentACarApp.Models
 {
     public class BranchReservation
     {
-        public class MemberComment
-        {
-            [Key, Column(Order = 0)]
-            public int BranchID { get; set; }
-            [Key, Column(Order = 1)]
-            public int ReservationID { get; set; }
+        [Key, Column(Order = 0)]
+        [ForeignKey("Branch")]
+        public int BranchId { get; set; }
+        [Key, Column(Order = 1)]
+        [ForeignKey("Reservation")]
+        public int ReservationId { get; set; }
 
-            public virtual Reservation Reservation { get; set; }
-            public virtual Branch Branch { get; set; }
+        public virtual Branch Branch { get; set; }
+        public virtual Reservation Reservation { get; set; }
 
-            public bool Reception { get; set; }
-            
-        }
+        public bool Reception { get; set; }
+        
     }
 }

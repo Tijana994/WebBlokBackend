@@ -16,6 +16,7 @@ namespace RentACarApp.Controllers
 
             using (var unitofwork = new Dependency().Unit)
             {
+                
                 foreach (var item in unitofwork.AppUsers.GetAll())
                 {
                     Console.WriteLine(item.Name);

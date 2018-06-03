@@ -35,9 +35,9 @@ namespace RentACarApp.Models
         public List<Pic> Pics { get; set; }   //format jedne slike : idVozila_nazivSlike
 
         [Required]
-        [ForeignKey("Servis")]
-        public int ServisId { get; set; }
-        public Servis Servis { get; set; }
+        [ForeignKey("Service")]
+        public int ServiceId { get; set; }
+        public Service Service { get; set; }
 
         public virtual ICollection<PriceList> PriceLists { get; set; }
     }

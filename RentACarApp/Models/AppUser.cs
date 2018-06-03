@@ -18,6 +18,9 @@ namespace RentACarApp.Models
         [MaxLength(40)]
         public string Surname { get; set; }
         [Required]
+        [MaxLength(40)]
+        public string Username { get; set; }
+        [Required]
         public DateTime BirthDate { get; set; }
         [Required]
         public bool Approved { get; set; }
@@ -28,6 +31,8 @@ namespace RentACarApp.Models
         [MaxLength(200)]
         public string Path { get; set; } //format : idKorisnika_Dokument
 
+
+        public List<Service> Services { get; set; }
         public virtual ICollection<Rate> Rates { get; set; } //FK-s
         public virtual ICollection<Reservation> Reservations { get; set; } //FK-s
     }
